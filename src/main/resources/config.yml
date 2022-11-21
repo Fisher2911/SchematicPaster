@@ -1,0 +1,4 @@
+user:
+  max-tasks: 2
+commands:
+  commands-per-help-page: 5

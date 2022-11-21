@@ -1,0 +1,8 @@
+placed-schematic: "<green>You placed a %builder_name% <green>schematic"
+schematic-build-complete: "<green>The schematic %builder_name% <green>is complete"
+max-tasks: "<red>You cannot place any more schematics, please wait for your current schematics to finish!"
+no-permission-to-place-schematic: "<red>You do not have permission to place this schematic"
+player-not-found: "<red>Player not found"
+gave-item: "<green>You gave %user_name% a %builder_name% <green>schematic"
+given-item: "<green>You were given a %builder_name% <green>schematic"
+schematic-item-not-found: "<red>That schematic item could not be found"

@@ -1,0 +1,43 @@
+builder-items:
+  1:
+    item:
+      name: "<aqua>A village house schematic"
+      material: CRAFTING_TABLE
+      glow: true
+      lore:
+        - ""
+        - "<rainbow>A village house schematic"
+    id: villagehouse
+    name: "<aqua>A village house"
+    money-cost: 100
+    # in ticks
+    place-interval: 5
+    file-name: "test.schem"
+  2:
+    item:
+      name: "<aqua>A fast village house schematic"
+      material: CHEST
+      glow: true
+      lore:
+        - ""
+        - "<rainbow>A fast village house schematic"
+    id: fastvillagehouse
+    name: "<aqua>A fast village house"
+    money-cost: 100
+    # in ticks
+    place-interval: 1
+    file-name: "test.schem"
+  3:
+    item:
+      name: "<aqua>A desert temple schematic"
+      material: SANDSTONE
+      glow: true
+      lore:
+        - ""
+        - "<rainbow>A desert temple schematic"
+    id: deserttemple
+    name: "<aqua>A desert temple"
+    money-cost: 100
+    # in ticks
+    place-interval: 2
+    file-name: "test.schem"

@@ -1,0 +1,16 @@
+name: SchematicPaster
+version: "1.0.0-beta"
+main: io.github.fisher2911.schematicpaster.SchematicPasterPlugin
+api-version: 1.16
+depend: [ FisherLib, WorldEdit, WorldGuard ]
+commands:
+  schematicpaster:
+    description: SchematicPaster commands
+    usage: /schematicpaster <command>
+permissions:
+  schematicpaster.admin.help:
+    default: op
+    description: Allows access to the admin help command
+  schematicpaster.admin.give:
+    default: op
+    description: Allows access to the admin give command

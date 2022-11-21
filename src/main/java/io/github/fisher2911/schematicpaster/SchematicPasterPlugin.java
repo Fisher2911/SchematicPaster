@@ -18,6 +18,7 @@ import io.github.fisher2911.schematicpaster.schematic.SchematicBuilderManager;
 import io.github.fisher2911.schematicpaster.schematic.SchematicTaskManager;
 import io.github.fisher2911.schematicpaster.user.SchematicUser;
 import io.github.fisher2911.schematicpaster.user.UserManager;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
 import org.bukkit.World;
@@ -59,6 +60,8 @@ public final class SchematicPasterPlugin extends FishPlugin<SchematicUser, Schem
         this.load();
         this.registerCommands();
         this.registerListeners();
+        final int bStatsPluginId = 16904;
+        Metrics metrics = new Metrics(this, bStatsPluginId);
     }
 
     public void registerListeners() {

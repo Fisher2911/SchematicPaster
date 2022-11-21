@@ -1,5 +1,5 @@
 name: SchematicPaster
-version: "1.0.0-beta"
+version: "1.0.1-beta"
 main: io.github.fisher2911.schematicpaster.SchematicPasterPlugin
 api-version: 1.16
 depend: [ FisherLib, WorldEdit, WorldGuard ]

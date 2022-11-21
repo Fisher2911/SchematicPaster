@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "io.github.fisher2911"
-version = "1.0.0-beta"
+version = "1.0.1-beta"
 
 repositories {
     mavenCentral()
@@ -22,6 +22,7 @@ dependencies {
     compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.7-SNAPSHOT")
     compileOnly("com.github.Fisher2911:FisherLib:-SNAPSHOT")
     compileOnly("org.jetbrains:annotations:23.0.0")
+    implementation("org.bstats:bstats-bukkit:3.0.0")
     implementation("com.zaxxer:HikariCP:3.3.0")
 }
 
@@ -37,6 +38,7 @@ tasks {
 
     shadowJar {
         relocate("com.zaxxer.hikari", "io.github.fisher2911.schematicpaster.hikari")
+        relocate("org.bstats", "io.github.fisher2911.schematicpaster.bstats")
         archiveFileName.set("SchematicPaster-${version}.jar")
     }
 

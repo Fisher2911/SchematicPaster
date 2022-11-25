@@ -131,7 +131,7 @@ public class SchematicBuilderManager extends Config implements Manager<Schematic
         });
     };
 
-    private static final TriFunction<SchematicBuilder, SchematicUser, WorldPosition, TaskChain<Object, SchematicTask>> TASK_FUNCTION = (builder, user, position) -> {
+    public static final TriFunction<SchematicBuilder, SchematicUser, WorldPosition, TaskChain<Object, SchematicTask>> TASK_FUNCTION = (builder, user, position) -> {
         final SchematicPasterPlugin plugin = SchematicPasterPlugin.getPlugin(SchematicPasterPlugin.class);
         final DataManager dataManager = plugin.getDataManager();
         final int x = position.position().getBlockX();
@@ -197,7 +197,7 @@ public class SchematicBuilderManager extends Config implements Manager<Schematic
 //        }
     };
 
-    private static final TriPredicate<SchematicBuilder, SchematicUser, WorldPosition> PERMISSION_PREDICATE = (builder, user, position) -> {
+    public static final TriPredicate<SchematicBuilder, SchematicUser, WorldPosition> PERMISSION_PREDICATE = (builder, user, position) -> {
         final SchematicPasterPlugin plugin = SchematicPasterPlugin.getPlugin(SchematicPasterPlugin.class);
         if (builder.getPermission() != null && !user.hasPermission(builder.getPermission())) {
             plugin.getMessageHandler().sendMessage(
@@ -214,6 +214,10 @@ public class SchematicBuilderManager extends Config implements Manager<Schematic
         return true;
     };
 
+    public void register(SchematicBuilder builder) {
+        this.builders.put(builder.getId(), builder);
+    }
+
     private static final String BUILDER_ITEMS_PATH = "builder-items";
 
     public void load() {
@@ -226,7 +230,7 @@ public class SchematicBuilderManager extends Config implements Manager<Schematic
             final var node = source.node(BUILDER_ITEMS_PATH);
             for (var child : node.childrenMap().values()) {
                 final var builder = SchematicBuilderSerializer.deserialize(child, TASK_FUNCTION, PERMISSION_PREDICATE);
-                this.builders.put(builder.getId(), builder);
+                this.register(builder);
             }
         } catch (IOException e) {
             e.printStackTrace();
